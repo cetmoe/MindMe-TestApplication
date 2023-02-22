@@ -1,14 +1,21 @@
 import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import Header from './header/header';
+import Header from './components/Header';
+import Home from './components/Home';
+import {
+  BrowserRouter,
+  Route,
+  Routes,
+} from 'react-router-dom';
+import Launcher from './components/Launcher';
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div>
-      <Header />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/app' element={<Home />} />
+        <Route path='/' element={<Launcher />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
