@@ -4,11 +4,10 @@ import { oauth2 as SMART } from 'fhirclient';
 export default class Launcher extends React.Component {
   componentDidMount() {
     SMART.authorize({
-      iss: 'https://api.dips.no/fhir',
-      clientId: 'test-123',
+      clientId: 'demo_application_mindme',
+      scope: 'openid offline_access dips-fhir',
       redirectUri: './app',
-      scope:
-        'openid dips-fhir-r4 fhirUser patient/*.read offline_access',
+      iss: 'https://api.dips.no/FHIR',
     });
   }
 
